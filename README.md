@@ -29,12 +29,12 @@ I couldn't find a way to share the entire local boostnote repository on my devic
 
 ## Acknowledgments
 
-in addition to my professor's lectures and the tasks we carried out in the lab,  
-i have also used these references in parts of my notes:
+In addition to my professor's lectures and the tasks we carried out in the lab,  
+I have also used these references in parts of my notes:
 
 -   [Java Programming by Joyce Farrell, Eighth Edition](https://www.amazon.com/Java-Programming-Joyce-Farrell/dp/1285856910/)
 -   [Java How To Program (Early Objects) by Paul J. Deitel & Harvey Deitel, 10th Edition](https://www.amazon.com/Java-Program-Early-Objects-10th/dp/0133807800/)
 -   [JavaTPoint - java](https://www.javatpoint.com/java-tutorial)
 -   [TutorialsPoint - java](https://www.tutorialspoint.com/java/index.htm)
 
-note: newer versions of the books might be able
+note: newer versions of the books might be available
