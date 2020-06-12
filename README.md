@@ -22,6 +22,8 @@ the files have a title and tag header at the top, which was the name i used for 
 
 I couldn't find a way to share the entire local boostnote repository on my device. that probably would make things a lot easier.
 
+I had also used images in some parts. I have added them to the screenshots folder.  
+Once HTML files are ready, this will most likely be solved as well.
 ## Authors
 
 -   **Moeinoddin Mansourfar**:
