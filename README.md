@@ -1,3 +1,7 @@
+---
+title: "README"
+tags: ""
+---
 # Java Course Summary & Notes
 
 These are the notes I wrote throughout my Advanced programming course where we learned JAVA.  
@@ -22,8 +26,6 @@ the files have a title and tag header at the top, which was the name i used for 
 
 I couldn't find a way to share the entire local boostnote repository on my device. that probably would make things a lot easier.
 
-I had also used images in some parts. I have added them to the screenshots folder.  
-Once HTML files are ready, this will most likely be solved as well.
 ## Authors
 
 -   **Moeinoddin Mansourfar**:
@@ -31,12 +33,12 @@ Once HTML files are ready, this will most likely be solved as well.
 
 ## Acknowledgments
 
-In addition to my professor's lectures and the tasks we carried out in the lab,  
-I have also used these references in parts of my notes:
+in addition to my professor's lectures and the tasks we carried out in the lab,  
+i have also used these references in parts of my notes:
 
 -   [Java Programming by Joyce Farrell, Eighth Edition](https://www.amazon.com/Java-Programming-Joyce-Farrell/dp/1285856910/)
 -   [Java How To Program (Early Objects) by Paul J. Deitel & Harvey Deitel, 10th Edition](https://www.amazon.com/Java-Program-Early-Objects-10th/dp/0133807800/)
 -   [JavaTPoint - java](https://www.javatpoint.com/java-tutorial)
 -   [TutorialsPoint - java](https://www.tutorialspoint.com/java/index.htm)
 
-note: newer versions of the books might be available
+note: newer versions of the books might be able

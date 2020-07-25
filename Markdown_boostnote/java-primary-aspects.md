@@ -37,4 +37,31 @@ You can write two kinds of programs using Java:
     > 1.  console applications, which support character or text output to a computer screen.  
     > 2.  windowed applications, which create a GUI with elements such as menus, toolbars, and dialog boxes.  
 
+### memory regions in java
+
+static data
+
+> for variables that are neither created or destroyed throughout the program, like name constants and other class variables(static fields) 
+
+heap
+
+> used when creating objects, memory is allocated from the heap
+
+stack
+
+> used to store local variables of methods
+> a new stackframe is created when calling a method
+
+    remember in heap-stack diagrams:
+    heap --> new objects are created, store here
+    stack --> reference to ojects
+    **: different usage might cause some things to go 		  to stack form heap
+    ***: all down to new objects
+
+-   in classical architectures, heap and stack grow from opposite size to maximize memory usage
+-   in heap-stack trace's we also need to consider an overhead memory to define the start of objects(in heap) and start of methods(in stack)
+-   heap starts at 1000 and stack at FFFC. each memory size is 4bytes. thus the above numbers change by 4.  
+    all fields, local var's,references and etc take 4bytes
+-   for primitive types we do not show any allocated memory, because they do not need a reference in stack to heap. calculate outside of both(not really), and then store in heap.
+
 sad

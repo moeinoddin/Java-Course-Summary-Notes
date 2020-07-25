@@ -47,10 +47,11 @@ receiving application, obtains input when it is obtained completely and in order
 **Port**
 
 > a host might have many open connections.  
-> a port is a unique communication endpoint, a 16bit integer associated with a process. defines to who the connection is established
+> a port is a unique communication endpoint, a 16bit integer associated with a process.
 >
 > > basically the IP is incomplete  
-> > the name of the process on that side is also required
+> > a port defines which application the data is related to
+> > the OS needs to distinguish which application should be given the data.
 
 > \###.###.###.###: 80  
 > well-known port for web servers  

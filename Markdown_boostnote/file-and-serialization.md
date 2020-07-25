@@ -19,7 +19,7 @@ import java.io.*;
 7. PrintWriter
 8. Formatter
 
-9. implements Serializable 	private static final long serialVersionUID = 1L; 
+9. implements Serializable,	private static final long serialVersionUID = 1L; 
 10. File;
 
 import java.nio.file.*;
@@ -118,8 +118,19 @@ types of streams:
     > in binary data format [char-2, int-4, double-8]  
     > Binary files
 -   Character-based Streams:
-    > using sequence of characters - 2bytes for each  
+    > using sequence of characters - 2bytes for each  character  
     > text files
+
+note: in the end computers work with binary data(0/1).  
+it just depends whether the data is to be understandable by humans or not  
+
+the Scanner and PrintWriter classes can only work with text Streams.  
+they convert/parse the data to Strings and vise versa.
+
+note:  
+direct writing of primitive types using "FileOutputStream" is not available.  
+primitive types like " float, double and ... " .  
+although they might be written as objects: "Float, Double, ..."
 
 ```java
 import java.io
@@ -195,6 +206,7 @@ FileWriter out = new FileWriter( File/address );
 FileOutputStream out = new FileOutputStream( File/address );
 
 out.'write()';
+//no methods to write float, double and other primitive types in fileOutputStream
 ```
 
 ### Buffering - enhanced File IO
@@ -250,31 +262,39 @@ using the **flush** method of a stream object. to transfer partial buffer logica
 * * *
 
 utilities for File IO:  
+
+**note**: these work with readable (Character-based) files
+
 **Scanner** - the same functionalities as before
 
 ```java
-Scanner scanReader = new Scanner(fileReader/File/address)
-//also supports any File,Readable,InputStream
+Scanner scanReader = new Scanner( Reader/ InputStream / Readable/ File/ address)
+
+"note:" //Scanner supports all types of Readers and InputStreams
+		//both CharacterStreams and ByteStreams
+    	//however the data inside must be in readable text format
 while(scanReader.hasNext---()) ...
 ```
 
 **PrintWriter** - similar to System.out.---
 
 ```java
-PrintWriter output = new PrintWriter (fileWriter/File/address);
-//also supports any File,PrintStream,OutputStream
+PrintWriter output = new PrintWriter ( Writer/ OutputStream/ File/ address)
 
+"note:" //PrintWriter supports all types of Writers and OutputStreams
+		//both CharacterStreams and ByteStreams
+    	//written data will be in readable text format
 output.'println() , print() , printf()';
 ```
 
-**Formatter** - string formatting - regex?  
+**Formatter** - string formatting 
 can also be used with files like using "printf"
 
 ```java
 Formatter output = new Formatter(fileWriter/File/address);
 //also supports any File,PrintStream,OutputStream
 
-output.format("StringFormat",args);
+output.format("StringFormat",args);//only method similar to printf is available
 ```
 
 * * *
@@ -286,8 +306,10 @@ output.format("StringFormat",args);
     -   fields can be declared **transient** to be skipped in serialization
         -   these fields must be **recalculated** after deserialization
 -   this is just a tagging interface
--   can be used together with Byte-based file stream classes
+-   used together with Byte-based file stream classes
     -   FileInputStream, FileOutputStream
+-   can be used to directly write primitve types like "float, double, ... " in byte format  
+    [  might actually be Float, Double, ... ]
 
 ```java
 public class ClassName implements Serializable{
@@ -306,6 +328,11 @@ in = new ObjectInputStream(new FileInputStream(new File(fileAdress)));
 
 in.'readObject()' //read an object from an InputStream and return the reference
 				  //must be cast to a variable in the stack
+
+//for primitive types:
+in.'readInt()'
+in.'readFloat()'
+in.'readDouble()'  
 ```
 
 ### ObjectOutputStream
@@ -315,6 +342,12 @@ ObjectOutputStream out;
 out = new ObjectOutputStream(new FileOutputStream(new File(fileAddress)));
 
 out.'writeObject()' //write an object to an outputStream
+    
+//for primitive types:
+out.'writeInt()'
+out.'writeFloat()'
+out.'writeDouble()'    
+...
 ```
 
 * * *
@@ -323,5 +356,4 @@ out.'writeObject()' //write an object to an outputStream
 
 ### obtained notes:
 
--   before data can be read from a file, it must be closed,  
-    inorder to commit the changes.
+-   close the output stream to make sure new changes are commited to the file

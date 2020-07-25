@@ -178,7 +178,7 @@ c.'weightx'	  = 0 //the weight of a component in horizontal resizing
 c.'weighty'	  = 0 //the weight of a component in Vertical resizing
 c.'gridwidth' = 1 //the number of cells to span horizontally
 c.'gridheight'= 1 //the number of cells to span vertically
-
+c.'insets' = new insets( , , , ) //empty space from position borders
 gridwith can be set to:
 GridBagConstraints.'RELATIVE';  //next-to-last in row
 GridBagConstraints.'REMAINDER'; //end ro

@@ -5,7 +5,7 @@ tags: ""
 comments and overall structure
 
 ```java
-/** used for blue comments, usually in beginning */
+/** used for blue comments, javadoc */
 /*  used for multi comment lines*/
 //  single line comment
 package packageName;
@@ -22,7 +22,20 @@ public class ClassName{
 Javadoc comments are a special case of block comments called documentation comments. they are used to automatically generate nicely formatted program
 documentation with a program named javadoc.
 The Java Development Kit (JDK) includes the javadoc tool, which you can use when writing programs in Java.
-The tool produces HTML pages that describe classes and their contents.
+The tool produces HTML pages that describe classes and their contents:
+
+```java
+javadoc: //for public members only
+/**
+* Description of the following class/method/field
+* @Author - for class only
+* @version - typically for class
+* 
+* {@inheritDoc} - for inheritance & overriding
+* @param
+* @returns
+* @throws ExceptionNameType reason
+```
 
 primitive data types:
 
@@ -45,12 +58,17 @@ primitive data types:
     	7 / 2.0 = 3.5;
 
 named constants: A named constant can be assigned a value only once, and then it cannot be changed later
-in the program, whether initialized or obtained through other mean.
+in the program, whether initialized or obtained through other means.
 
 ```java
 final String MY_ADDRESS; obtained later in program
 final int DAYS_IN_WEEK = 7;
 final double PI = 3.14;
+
+CAPS_CASE
+
+if the named constant is a private field in a class, it can be given value within constructors,  
+it is recommended to initilize their value upon construction or with default value after declaring the variable.
 ```
 
 If we want to convert a smaller data type into a larger data type, we do not need to do anything explicitly. However, if we want to assign a **larger data type to a smaller data type**, we need to indicate it explicitly using a pair of parenthesis.

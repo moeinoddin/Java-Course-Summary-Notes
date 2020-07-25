@@ -10,8 +10,14 @@ String s="learn working with strings";
     the former stores a valuen while the latter stores an address to where the data is stored.
 
     Strings are Immutable: changing it is actually creating a new string and assigning the new address
+    actually being immutable means unable to change after creation
+    ***this is also worth noting in the methods***
+
 
     Strings cannot span multiple lines of code.
+
+-   immutable class / object:  
+    this is done by setting fields to private and not declaring Setters
 
 ## object methods:
 
@@ -40,6 +46,32 @@ s.'charAt'(int i) - return the character at index i
 s1.'equals'(String s2);
 	boolean equalsOrNot = s1.equals(s2);
 
+obj.'toString()' -- creates a String represantion of the data -- usually "overridden" in defined classes
+in sysout( obj1 + "" + obj2 + "str1") -- java tries to conver objects to string,
+using the toString() method from the Object class.
+```
+
+-   for the **_s1.equals(String s2)_** method, newer versions of jdk implement a method for reserving memory space.
+-   that is if 2 String objects have the same value, they will be a reference to the same object like this:
+
+```java
+String str1 = "customString";
+		String str2 = "customString";
+		TestClass obj1 = new TestClass(2, 3, "string1");
+		TestClass obj2 = new TestClass(2, 3, "string1");
+
+		Sysout(str1==str2);					//true
+		Sysout(obj1==obj2);					//false
+		Sysout(obj1.equals(obj2));			//false
+		Sysout("string1"=="string1");		//true
+		Sysout(obj1.s==obj2.s);				//true
+		Sysout(obj1.s=="string1");			//true
+		Sysout(obj1.s.equals("string1"));	//true
+		Sysout(obj1.s.equals(obj2.s));		//true
+
+```
+
+```java
 String[] parts = s.'split'(String splitter);
 splits a string into substrings based on a user-defined separator.
 returns an array that contains the resulting substrings
@@ -64,7 +96,7 @@ a string derived from this string by replacing every occurrence[ or 's.replaceFi
 
 boolean ifContain = s.'contains'(char[] c / String s);
 
-s.'trim()' - the same string without any whitespaces
+s.'trim()' - the same string without any whitespaces at 'beginning or end'
 
 
 ```

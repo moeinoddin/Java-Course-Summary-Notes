@@ -67,13 +67,13 @@ general structure of creating a ListCellRenderer
 private class MyCellRenderer extends DefaultListCellRenderer{  
 
 @Override
-public Component getListCellRendererComponent(JList list, Object object,int index,
+public Component getListCellRendererComponent(JList list, Object value,int index,
                                               boolean isSelected, boolean cellHasFocus) {
 	
-    if (object instanceof  ListItemType) {
+    if (object instanceof  ClassType) {
 		ClassType typeObj = (ClassType) object;
-    	setText(String str) //method to display items in the list
-		setIcon(icon);//icon on the left side of text
+    	'setText'(String str) //method to display items in the list
+		'setIcon'(icon);//icon on the left side of text
         
     	if (isSelected) {
 	    	setBackground(list.getSelectionBackground());
@@ -84,7 +84,7 @@ public Component getListCellRendererComponent(JList list, Object object,int inde
     	}
 	setEnabled(list.isEnabled());
 	}
-	return this; // i have no idea
+	return this; // with the selected text and icon
 }
 ```
 
@@ -96,7 +96,8 @@ public Component getListCellRendererComponent(JList list, Object object,int inde
     It has a 'root node' at the top most which is a parent for all nodes in the tree.
 
 ```java
-DefaultMutableTreeNode root = new DefaultMutableTreeNode(String txt);
+// with the object that holds the data of this node
+DefaultMutableTreeNode root = new DefaultMutableTreeNode(Object obj);
 'root.add'(DefaultMutableTreeNode newNode/folder );
 
 JTree tree = new JTree( TreeNode root ); //DefaultMutableTreeNode

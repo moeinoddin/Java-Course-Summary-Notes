@@ -48,10 +48,39 @@ sentinel value:
 
 > a special value in loops to indicate “end of data entry”
 
+access modifier
+
+> in OOP or specifically java, it determines to what extent other classes can acces the class's methods and fields(fields always private).
+> detailed list exists in the notes on classes and methods
+
 class:  
 
 > the classes objects come from, are essentially reusable software components.  
 > they are the blueprints which objects can be instantiated from.
+
+client class:
+
+> a class that utilizes other classes in its code  
+> in UML Class-Diagrams an arrow point from the class to the used class  
+> a black arrow
+
+subClass:
+
+> inherits from superClasses, in UML Class-Diagram  
+> a white arrow from subClass to superClass
+>
+> ```java
+> public class SubClass extends superClass{
+> 	additional fields
+>     additional methods 
+> }
+> ```
+>
+> also consider **_inheritance hierarchies_**
+
+superClass
+
+> a class that holds common fields and methods of its subclasses
 
 static keyWord:  
 
@@ -87,13 +116,38 @@ In object-oriented classes, attributes and methods are encapsulated into objects
 
 > the feature of languages that allows the
 > same word or symbol to be interpreted correctly  
-> in different situations based on the context.
+> in different situations based on the context.  
+
+> object variables are polymorphic, they can have reference to objects of different types
+> either the defined type or **_subclasses_** of the defined type which **_inherit_** from it
+
+### static type
+
+> the declared type of the varialble, left side of declaration  
+> [ COMPILER CHECK ]  
+
+### dynamic type
+
+> the type of the object that is being referred to at the moment
+> [ RUNTIME CHECK ]  
+
+-   use the 'instanceof' operator to check for the dynamic type of a variable - can be used prior to casting in if-statements
+
+### method dispatch/lookup
+
+>
+
+* * *
 
 state - attribute - method:
 
 > Attributes are the characteristics
 > that define an object  
 > A method is a self-contained block of program code that carries out some action  
+>
+> > mutators: changes the fields of the object - e.g. setters  
+> > accessors: provide info about object state - e.g. getters
+
 > values of the properties of an object are referred to as the object’s state
 
 generic classes:  
@@ -102,4 +156,19 @@ generic classes:
 > ArrayList&lt;type) varName = new ArrayList&lt;type);  
 > Iterator&lt;type) iteratorName = collectionObject.iterator()
 
-dsa
+Interface:
+
+> it allows us to use other programmers codes,libraries, ...
+> without knowing how it is implemented, like how we have used various classes supported by the java library without even knowing how they work on the inside. we just need an INTERFACE to use it in our own programs
+
+API = Application programming interface
+
+> interface description and documentation for all library classes
+
+immutable Class / object
+
+> once created, the memory in heap of it cannot be altered. must allocate new memory to it if need to change
+>
+> this is done by setting fields to private and not declaring Setters
+
+kjkj

@@ -39,9 +39,16 @@ Any import statement you use must be placed outside of any class written in a fi
 ```java
 import java.util.Scanner
 import java.util.Arrays
+import java.util.ArrayList --- 'also for various other collection'
 import java.math.* --- very limited number of classes within the package
 // java.lang.Math is already imported, no need for import.
 // note difference: Math & math.
+import java.util.Date
+import java.util.SimpleDateFormat
+import java.util.Random();
+
+probably best to import java.util.*
+note that only classes wil be imported not packages with their own classes
 
 import javax.swing.JOptionPane; - used in GUI application
 
